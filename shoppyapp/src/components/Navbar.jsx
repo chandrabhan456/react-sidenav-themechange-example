@@ -17,7 +17,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="button"
       onClick={() => customFunc()}
       style={{ color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="relative text-xl rounded-full p-3 "
     >
       <span
         style={{ background: dotColor }}
@@ -54,15 +54,15 @@ const Navbar = () => {
       <div className='flex mt-2'> 
       <NavButton title="Cart" customFunc={() => handleClick('cart')}
       color={ currentMode == 'Light'  ? 'black' : 'white'} icon={<FiShoppingCart />} />
-      <NavButton title="Chat"
+      <NavButton title="Chat" customFunc={() => handleClick('chat')}
       dotColor="#03c9d7"
       color={ currentMode == 'Light'  ? 'black' : 'white'}  icon={<BsChatLeft />} />
-      <NavButton title="Notification"
+      <NavButton title="Notification" customFunc={() => handleClick('notification')}
       color={ currentMode == 'Light'  ? 'black' : 'white'}  icon={<RiNotification3Line />} />
        <TooltipComponent content="Profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            
+            className="flex items-center gap-2 cursor-pointer p-1  rounded-lg"
+            onClick={() => handleClick('userProfile')}
           >
             <img
               className="rounded-full w-8 h-8"
@@ -79,6 +79,9 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
         {isClicked.cart && <Cart /> }
+        {isClicked.chat && (<Chat />)}
+        {isClicked.notification && (<Notification />)}
+        {isClicked.userProfile && (<UserProfile />)}
 
       </div>
     </div>
