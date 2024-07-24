@@ -75,7 +75,7 @@ function App() {
                 <Route path="/ecommerce" element={(<Ecommerce />)}/>
 
                 {/* pages  */}
-                <Route path="/orders" element="h3"/>
+                <Route path="/orders" element={(<Orders />)}/>
                 <Route path="/employees" element="h4"/>
                 <Route path="/customers" element="h4" />
 
