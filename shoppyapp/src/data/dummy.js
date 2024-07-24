@@ -497,65 +497,8 @@ export const links = [
       },
     ],
   },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
+  
+   
 ];
 
 export const cartData = [
@@ -1489,6 +1432,8 @@ export const employeeHeader =[
   { Key: "Country", label: "Country" },
   { Key: "HireDate", label: "HireDate" },
   { Key: "ReportsTo", label: "ReportsTo" },
+  
+  { Key: "Action", label: "Actions" },
 
 ]
 export const employeesData = [

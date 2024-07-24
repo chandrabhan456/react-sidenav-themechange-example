@@ -76,25 +76,10 @@ function App() {
 
                 {/* pages  */}
                 <Route path="/orders" element={(<Orders />)}/>
-                <Route path="/employees" element="h4"/>
-                <Route path="/customers" element="h4" />
+                <Route path="/employees" element={(<Employees />)}/>
+                <Route path="/customers" element={(<Employees />)}/>
 
-                {/* apps  */}
-                <Route path="/kanban" element= "h5"/>
-                <Route path="/editor" element="h6" />
-                <Route path="/calendar" element="h7" />
-                <Route path="/color-picker" element="h8" />
-
-                {/* charts  */}
-                <Route path="/line" element="h11"/>
-                <Route path="/area" element="h22" />
-                <Route path="/bar" element="h12" />
-                <Route path="/pie" element="h21" />
-                <Route path="/financial" element="h222" />
-                <Route path="/color-mapping" element="h111" />
-                <Route path="/pyramid" element="h112" />
-                <Route path="/stacked" element="h113" />
-
+              
               </Routes>
             </div>
           </div>
