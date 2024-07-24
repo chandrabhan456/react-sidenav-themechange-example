@@ -77,7 +77,7 @@ function App() {
                 {/* pages  */}
                 <Route path="/orders" element={(<Orders />)}/>
                 <Route path="/employees" element={(<Employees />)}/>
-                <Route path="/customers" element={(<Employees />)}/>
+                <Route path="/customers" element={(<Customers />)}/>
 
               
               </Routes>

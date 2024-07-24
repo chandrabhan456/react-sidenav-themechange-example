@@ -301,8 +301,8 @@ function Orders() {
               value={selects}
               onChange={(e) => setSelects(e.target.value)}
             >
-              <option>8</option>
               <option>10</option>
+              <option>12</option>
               <option>15</option>
             </select>
           </div>

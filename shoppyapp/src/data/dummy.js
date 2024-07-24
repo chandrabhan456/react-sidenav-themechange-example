@@ -862,6 +862,18 @@ export const ordersGrid = [
     textAlign: 'Center',
   },
 ];
+export const customerHeader =[
+ 
+ 
+  { Key: "Name", label: "CustomerName" },
+  { Key: "Email", label: "CustomerEmail" },
+  { Key: "Project", label: "ProjectName" },
+  { Key: "Status", label: "Status" },
+  { Key: "Budget", label: "Budget" },
+  { Key: "Location", label: "Location" },
+  { Key: "Action", label: "Actions" },
+
+]
 
 export const customersData = [
   {
