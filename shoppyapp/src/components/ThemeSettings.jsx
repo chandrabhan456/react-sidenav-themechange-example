@@ -36,9 +36,9 @@ const ThemeSettings = () => {
 
         </div>
         <div className="flex-col border-t-1 border-color p-4 ml-4">
-          <p className="font-semibold text-xl ">Theme Option</p>
+          <p className="font-semibold text-xl " style={{textAlign:'start'}}>Theme Option</p>
 
-          <div className="mt-4 flex " style={{marginLeft:'-330px'}} >
+          <div className="mt-4  flex " >
             <input 
               type="radio"
               id="light"
@@ -47,14 +47,14 @@ const ThemeSettings = () => {
               className="cursor-pointer "
               onChange={setMode}
               checked={currentMode === 'Light'}
-              
+              style={{textAlign:'start'}} 
             />
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-            <label htmlFor="light" className=" text-md cursor-pointer" style={{marginLeft:'-330px'}} >
+            <label htmlFor="light" className=" text-md cursor-pointer" style={{marginRight:'80%'}} >
               Light
             </label>
           </div>
-          <div className="mt-2 flex" style={{marginLeft:'-330px'}}>
+          <div className="mt-2 flex" style={{textAlign:'flex-start'}}>
            
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             
@@ -67,7 +67,7 @@ const ThemeSettings = () => {
               className="cursor-pointer"
               checked={currentMode === 'Dark'}
             />
-            <label htmlFor="dark" className="cursor-pointer" style={{marginLeft:'-330px'}}>
+            <label htmlFor="dark" className="cursor-pointer" style={{marginRight:'80%'}} >
               Dark
             </label>
           </div>

@@ -103,8 +103,8 @@ function Orders() {
           <div className=" mt-15 ">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-lg text-gray-400">Page</p>
-                <div className="flex">
+              
+                <div className="flex mt-4">
                   <p className="text-3xl font-extrabold tracking-tight text-black dark:text-white">
                     Employees
                   </p>

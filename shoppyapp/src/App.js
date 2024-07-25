@@ -13,7 +13,7 @@ import { useStateContext } from './contexts/ContextProvider';
 
 
 function App() {
-  const {login1,setCurrentColor, setCurrentMode,initialState,isClicked, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const {login1,setlogin1,setCurrentColor, setCurrentMode,initialState,isClicked, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -26,7 +26,11 @@ function App() {
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
-    {!login1 && (<Routes> <Route path="/" element={(<Login />)}/></Routes>)}
+      
+     
+    {!login1 && (<Login />)}
+    
+    
       {login1 && ( 
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>

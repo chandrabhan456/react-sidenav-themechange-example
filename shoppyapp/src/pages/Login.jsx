@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { emailValidator, passwordValidator } from '../components/regexValidators';
 import {useNavigate} from "react-router-dom"
 import { useStateContext } from "../contexts/ContextProvider";
@@ -18,12 +18,9 @@ const Login = () => {
 		
 	};
 
-	React.useEffect(()=>{
-		if(localStorage.getItem('auth')) navigate.push('/')
-	},[])
-
+	
 	const formSubmitter=(e) =>{
-		console.log("aa gya",input.email)
+		
 		e.preventDefault();
   
 		
@@ -37,11 +34,13 @@ const Login = () => {
 		// setsuccessMessage('Successfully Validated');
 		if(input.email !== 'admin@a.com' || input.password !== 'Password@1') return seterrorMessage('Invalid email or password');
 
-		console.log("true")
+		
         setlogin1(true)
+		
 
 	};
-
+	console.log(login1)
+		
 	return (
 		
 	  <div className="login">
