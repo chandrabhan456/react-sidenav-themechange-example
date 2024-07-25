@@ -41,9 +41,7 @@ const Sidebar = () => {
           <div className="mt-10 ">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-white dark:text-gray-400 m-3 mt-4 uppercase">
-                  {item.title}
-                </p>
+                
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}
@@ -65,7 +63,7 @@ const Sidebar = () => {
       )},
           {!activeMenu && (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex w-25 justify-between items-center">
             <Link to="/"  className="items-center gap-3 ml-8 mt-0 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
               <SiShopware />
             </Link>
@@ -83,9 +81,7 @@ const Sidebar = () => {
           <div className="mt-10 ">
             {links.map((item) => (
               <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
-                  {item.title}
-                </p>
+              
                 {item.links.map((link) => (
                   <NavLink
                     to={`/${link.name}`}

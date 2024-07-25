@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
@@ -8,12 +8,12 @@ import { Navbar, Footer, Sidebar, ThemeSettings} from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 
 
-
+import Login from "./pages/Login";
 import { useStateContext } from './contexts/ContextProvider';
 
 
 function App() {
-  const {setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const {login1,setCurrentColor, setCurrentMode,initialState,isClicked, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -22,9 +22,12 @@ function App() {
       setCurrentMode(currentThemeMode);
     }
   }, []);
+
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
+    {!login1 && (<Routes> <Route path="/" element={(<Login />)}/></Routes>)}
+      {login1 && ( 
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
@@ -49,9 +52,9 @@ function App() {
               <Sidebar />
             </div>
           )}
-          {!(activeMenu.activeMenu) &&(
+          {!(activeMenu.activeMenu) && (
             
-            <div className="h-100 w-15 dark:bg-secondary-dark-bg bg-main-bg">
+            <div className=" w-25 sidebar dark:bg-secondary-dark-bg bg-main-bg">
               <Sidebar />
             </div>
           )}
@@ -71,6 +74,8 @@ function App() {
 
             <Routes>
                 {/* dashboard  */}
+              
+
                 <Route path="/" element={(<Ecommerce />)}/>
                 <Route path="/ecommerce" element={(<Ecommerce />)}/>
 
@@ -84,6 +89,7 @@ function App() {
             </div>
           </div>
           </div>
+           )}
           </BrowserRouter>
           
           </div>

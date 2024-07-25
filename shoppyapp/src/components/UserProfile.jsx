@@ -5,12 +5,20 @@ import { Button } from '.';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
-
+import { Navigate  } from 'react-router-dom';
+import Login from "../pages/Login";
 const UserProfile = () => {
-  const { currentColor } = useStateContext();
+  const {login1,setlogin1, currentColor,handleClick,initialState  } = useStateContext();
+ 
+  function handlelogout(){
 
+  handleClick(initialState)
+  setlogin1(false)
+  localStorage.clear();
+  window.location.href = '/';
+  }
   return (
-    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#1d2041] p-8 rounded-lg w-96">
+    <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
         <Button
@@ -52,13 +60,11 @@ const UserProfile = () => {
         ))}
       </div>
       <div className="mt-5">
-        <Button
-          color="white"
-          bgColor={currentColor}
-          text="Logout"
-          borderRadius="10px"
-          width="full"
-        />
+        <button
+          style={{ backgroundColor: currentColor,color:'white',borderRadius:'10px'}}
+          className={` text-xl p-3 w-full hover:drop-shadow-xl `}
+          onClick={handlelogout}
+        >Logout</button>
       </div>
     </div>
 
