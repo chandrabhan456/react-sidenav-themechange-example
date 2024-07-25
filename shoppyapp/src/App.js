@@ -47,12 +47,13 @@ function App() {
             
             
           </div>
-          {activeMenu.activeMenu && (
+          {console.log("sidenav",activeMenu)}
+          {activeMenu && (
             <div className=" h-100 w-52 fixed  sidebar dark:bg-secondary-dark-bg bg-main-bg ">
               <Sidebar />
             </div>
           )}
-          {!(activeMenu.activeMenu) && (
+          {!(activeMenu) && (
             
             <div className=" w-25 sidebar dark:bg-secondary-dark-bg bg-main-bg">
               <Sidebar />
@@ -60,7 +61,7 @@ function App() {
           )}
           <div
             className={
-              activeMenu.activeMenu
+              activeMenu
                 ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-52 w-full  '
                 : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
             }

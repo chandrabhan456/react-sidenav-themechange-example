@@ -202,6 +202,7 @@ function Orders() {
                     borderRightWidth:"0",
                     borderLeft:"none",
                     fontSize: "14pt",
+                  
                   }}
                 >
                   <TableCellLayout style={{ paddingLeft: "60px" }}>
@@ -247,6 +248,7 @@ function Orders() {
                     borderLeft: "none",
                     borderRight: "none",
                     fontSize: "14pt",
+                    alignItems:'baseline'
                   }}
                 >
                   <TableCellLayout style={{ paddingLeft: "60px" }}>

@@ -155,7 +155,7 @@ function Orders() {
           className="bg-[#d0dde7] dark:bg-[#52529a] text-black dark:text-white"
           >
             {customerHeader.map((column) => (
-              <TableHeaderCell key={column.Key} id='headercell' style={{ paddingLeft: "60px" }}>
+              <TableHeaderCell key={column.Key} id='headercellc' style={{ paddingLeft: "60px" }}>
                 {column.label}
                 { <BiSortAlt2
                   id="UpDown-icon"

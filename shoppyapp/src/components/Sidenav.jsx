@@ -63,8 +63,8 @@ const Sidebar = () => {
       )},
           {!activeMenu && (
         <>
-          <div className="flex w-25 justify-between items-center">
-            <Link to="/"  className="items-center gap-3 ml-4 mt-0 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+          <div className="flex  justify-between items-center">
+            <Link to="/"  className="items-center gap-3 ml-5 mt-0 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
               <SiShopware />
             </Link>
             <TooltipComponent content="Menu" position="BottomCenter">

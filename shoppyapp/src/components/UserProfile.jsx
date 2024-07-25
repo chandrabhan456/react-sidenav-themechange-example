@@ -13,7 +13,7 @@ const UserProfile = () => {
   function handlelogout(){
 
   handleClick(initialState)
-  setlogin1(false)
+  
   localStorage.clear();
   window.location.href = '/';
   }
