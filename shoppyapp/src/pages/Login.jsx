@@ -39,7 +39,9 @@ const Login = () => {
 		
 
 	};
-	console.log(login1)
+	useEffect(() => {
+		localStorage.setItem('login',login1);
+	},[login1])
 		
 	return (
 		

@@ -8,6 +8,7 @@ const initialState = {
   userProfile: false,
   notification: false,
 };
+const loginstate = JSON.parse(localStorage.getItem('login')) || 'false'
 
 export const ContextProvider = ({ children }) => {
  
@@ -16,7 +17,7 @@ export const ContextProvider = ({ children }) => {
   const [currentColor, setCurrentColor] = useState('blue');
   const [currentMode, setCurrentMode] = useState('Dark');
   const [themeSettings, setThemeSettings] = useState(false);
-  const [login1,setlogin1] = useState(false)
+  const [login1,setlogin1] = useState(loginstate)
  
   const setMode = (e) => {
     setCurrentMode(e.target.value);
