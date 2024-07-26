@@ -22,7 +22,7 @@ function App() {
       setCurrentMode(currentThemeMode);
     }
   }, []);
-
+  const [isLoggedin, setIsLoggedin] = useState(false);
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
@@ -31,7 +31,7 @@ function App() {
     {!login1 && (<Login />)}
     
     
-      {login1 && ( 
+      {login1 ? ( 
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
             <TooltipComponent
@@ -59,7 +59,7 @@ function App() {
           )}
           {!(activeMenu) && (
             
-            <div className=" w-25 sidebar dark:bg-secondary-dark-bg bg-main-bg">
+            <div className=" h-100  w-25 sidebar dark:bg-secondary-dark-bg bg-main-bg">
               <Sidebar />
             </div>
           )}
@@ -94,6 +94,11 @@ function App() {
             </div>
           </div>
           </div>
+           ) : (
+            <>
+                        <h1></h1>
+                       
+                    </>
            )}
           </BrowserRouter>
           

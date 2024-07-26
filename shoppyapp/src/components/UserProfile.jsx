@@ -5,18 +5,19 @@ import { Button } from '.';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
-import { Navigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Login from "../pages/Login";
 const UserProfile = () => {
   const {login1,setlogin1, currentColor,handleClick,initialState  } = useStateContext();
- 
-  function handlelogout(){
+  const navigate = useNavigate();
 
-  handleClick(initialState)
-  
-  localStorage.clear();
-  window.location.href = '/';
-  }
+  function handlelogout(){
+    if (login1) {
+      handleClick(initialState)
+      setlogin1(false)
+      navigate('/')
+    }
+  };
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
