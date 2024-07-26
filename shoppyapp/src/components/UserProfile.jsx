@@ -15,6 +15,7 @@ const UserProfile = () => {
     if (login1) {
       handleClick(initialState)
       setlogin1(false)
+      localStorage.setItem('login',false)
       navigate('/')
     }
   };

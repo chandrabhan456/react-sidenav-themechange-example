@@ -28,7 +28,7 @@ function App() {
       <BrowserRouter>
       
      
-    {!login1 && (<Login />)}
+    { !login1 && <Login />}
     
     
       {login1 ? ( 
