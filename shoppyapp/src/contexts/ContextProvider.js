@@ -8,7 +8,7 @@ const initialState = {
   userProfile: false,
   notification: false,
 };
-const loginstate = JSON.parse(localStorage.getItem('login')) || false
+const loginstate = JSON.parse(localStorage.getItem('login')) || false 
 
 export const ContextProvider = ({ children }) => {
  

@@ -36,12 +36,10 @@ const Login = () => {
 
 		
         setlogin1(true)
-		
-
+	
+       
 	};
-	useEffect(() => {
-		localStorage.setItem('login',login1);
-	},[login1])
+	
 		
 	return (
 		

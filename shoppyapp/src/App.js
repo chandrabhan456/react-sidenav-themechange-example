@@ -29,7 +29,10 @@ function App() {
       
      
     { !login1 && <Login />}
-    
+    {useEffect(() => {
+		console.log("1234")
+		localStorage.setItem('login',login1);
+	},[login1])}
     
       {login1 ? ( 
         <div className="flex relative dark:bg-main-dark-bg">
