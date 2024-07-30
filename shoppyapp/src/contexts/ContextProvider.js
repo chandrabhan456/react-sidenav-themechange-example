@@ -8,7 +8,7 @@ const initialState = {
   userProfile: false,
   notification: false,
 };
-const loginstate = JSON.parse(localStorage.getItem('login')) || false 
+const loginstate = localStorage.login || false 
 
 export const ContextProvider = ({ children }) => {
  
@@ -17,6 +17,7 @@ export const ContextProvider = ({ children }) => {
   const [currentColor, setCurrentColor] = useState('blue');
   const [currentMode, setCurrentMode] = useState('Dark');
   const [themeSettings, setThemeSettings] = useState(false);
+  const [chatbot, setChatbot] = useState(false)
   const [login1,setlogin1] = useState(loginstate)
  
   const setMode = (e) => {
@@ -33,7 +34,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StateContext.Provider value={{ login1,setlogin1,activeMenu,setActiveMenu,handleClick,setIsClicked,isClicked,initialState,setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings,currentColor,currentMode}}>
+    <StateContext.Provider value={{ chatbot,setChatbot,login1,setlogin1,activeMenu,setActiveMenu,handleClick,setIsClicked,isClicked,initialState,setCurrentColor, setCurrentMode, setMode, setColor, themeSettings, setThemeSettings,currentColor,currentMode}}>
       {children}
     </StateContext.Provider>
   );

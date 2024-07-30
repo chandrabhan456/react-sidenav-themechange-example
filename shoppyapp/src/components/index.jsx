@@ -5,7 +5,7 @@ export { default as Sidebar } from './Sidenav';
 export { default as Navbar } from './Navbar';
 
 export { default as Cart } from './Cart';
-
+export { default as Chatbot } from './Chatbot';
 export { default as SparkLine } from './Charts/SparkLine';
 
 export { default as Stacked } from './Charts/Stacked';

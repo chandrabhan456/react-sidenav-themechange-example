@@ -2,9 +2,10 @@ import React,{useEffect,useState} from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
+import { SiChatbot } from "react-icons/si";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { Navbar, Footer, Sidebar, ThemeSettings} from './components';
+import { Navbar, Footer, Sidebar, ThemeSettings,Chatbot} from './components';
 import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
 
 
@@ -13,7 +14,7 @@ import { useStateContext } from './contexts/ContextProvider';
 
 
 function App() {
-  const {login1,setlogin1,setCurrentColor, setCurrentMode,initialState,isClicked, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const {chatbot,setChatbot,login1,setlogin1,setCurrentColor, setCurrentMode,initialState,isClicked, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
@@ -37,15 +38,26 @@ function App() {
       {login1 ? ( 
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: '1000' }}>
+            <TooltipComponent >
+            <button
+                type="button"
+                onClick={() => setChatbot(true)}
+                style={{ background: 'blue', borderRadius: '50%' }}
+                className="text-3xl text-white p-3 disabled:cursor-not-allowed"
+              >
+                <SiChatbot />
+              </button>
+            </TooltipComponent>
             <TooltipComponent
-              content="Settings"
+            
               position="Top"
             >
+             
               <button
                 type="button"
                 onClick={() => setThemeSettings(true)}
                 style={{ background: 'blue', borderRadius: '50%' }}
-                className="text-3xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray"
+                className="text-3xl text-white p-3 "
               >
                 <FiSettings />
               </button>
@@ -54,7 +66,7 @@ function App() {
             
             
           </div>
-          {console.log("sidenav",activeMenu)}
+          {console.log("sidenav11",chatbot)}
           {activeMenu && (
             <div className=" h-100 w-52 fixed  sidebar dark:bg-secondary-dark-bg bg-main-bg ">
               <Sidebar />
@@ -78,8 +90,9 @@ function App() {
             </div>
             
             <div>
+            {chatbot && (<Chatbot />)}
             {themeSettings && (<ThemeSettings />)}
-
+            
             <Routes>
                 {/* dashboard  */}
               
