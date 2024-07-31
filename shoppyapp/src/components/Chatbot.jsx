@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import { Button } from '.';
@@ -13,17 +13,29 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 const UserProfile = () => {
   const {setChatbot,login1,setlogin1, currentColor,handleClick,initialState  } = useStateContext();
   const navigate = useNavigate();
-
-  function handlelogout(){
-    if (login1) {
-      handleClick(initialState)
-      setlogin1(false)
-      localStorage.clear()
-      navigate('/')
+  const [isTyping, setIsTyping] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      message: "Hello, I'm ChatGPT! Ask me anything!",
+      sentTime: "just now",
+      sender: "ChatGPT",
+      direction:"incoming"
     }
-  };
+  ]);
+  
+  const handleSend = async (message) => {
+    const newMessage = {
+      message,
+      direction: 'outgoing',
+      sender: "user"
+    }
+    const newMessages = [...messages, newMessage];
+    
+    setMessages(newMessages);
+    setIsTyping(true);
+};
   return (
-    <div className="nav-item absolute right-1 bg-white dark:bg-[#42464D] p-8 rounded-lg w-22" style={{marginTop:"150px"}}>
+    <div className="nav-item absolute right-1 bg-white dark:bg-[#1d2041] p-8 rounded-lg w-22" style={{marginTop:"150px"}}>
       <div className="flex" style={{marginTop:"-20px",marginLeft:"-10px",whiteSpace:'nowrap'}}>
         <p className="font-semibold text-lg dark:text-gray-200">Shoppy Helpdesk</p>
         <button
@@ -40,11 +52,14 @@ const UserProfile = () => {
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
-              
+              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
             >
-             
+              {messages.map((message, i) => {
+                console.log(message)
+                return <Message key={i} model={message} />
+              })} 
             </MessageList>
-            <MessageInput placeholder="Type message here" />        
+            <MessageInput placeholder="Type message here" onSend={handleSend} />        
           </ChatContainer>
         </MainContainer>
         </div>
